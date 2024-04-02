@@ -363,6 +363,8 @@ class Diematic:
 			self.alarm['txt']='OK';
 		elif (self.alarm['id']==10):
 			self.alarm['txt']='Défaut Sonde Retour';
+		elif (self.alarm['id']==11):
+			self.alarm['txt']='Défaut Sonde Ambiance Zone A';
 		elif (self.alarm['id']==21):
 			self.alarm['txt']='Pression d\'eau basse';
 		elif (self.alarm['id']==26):
