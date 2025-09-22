@@ -1,0 +1,15 @@
+{
+  "name": "Diematic32 MQTT",
+  "version": "1.0.0",
+  "slug": "diematic32mqtt",
+  "description": "Publie les données Diematic vers MQTT via Modbus",
+  "startup": "services",
+  "boot": "auto",
+  "arch": ["amd64", "armv7", "aarch64"],
+  "options": {},
+  "schema": {},
+  "ports": {},
+  "map": ["config:rw", "share:rw"],
+  "environment": {},
+  "image": "local/diematic32mqtt"
+}
