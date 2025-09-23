@@ -1,11 +1,12 @@
-# syntax=docker/dockerfile:1
-FROM python:3.8-alpine
+ARG BUILD_FROM=ghcr.io/hassio-addons/base-python:3.12
+FROM ${BUILD_FROM}
 
-WORKDIR /app
+# Installer dépendances Python
+RUN pip install --no-cache-dir paho-mqtt pymodbus
 
-COPY src/requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+# Copier les sources
+WORKDIR /usr/src/app
+COPY src/ /usr/src/app/
 
-COPY src/*.py ./
-
-CMD [ "python3", "./Diematic32MQTT.py"]
+# Point d’entrée
+CMD ["python3", "/usr/src/app/Diematic32MQTT.py"]
